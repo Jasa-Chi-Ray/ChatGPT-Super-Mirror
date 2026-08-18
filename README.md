@@ -1,8 +1,7 @@
 # ChatGPT Super Mirror
 
-
 > **因为不确定封号风险，所以不要用主力账号登录，使用本项目即表示您已同意以下风险。**
->
+> 
 > 本项目是非官方的 ChatGPT 网页镜像/代理，不属于 OpenAI，也未获得 OpenAI 的授权、认可或账号安全保证。通过镜像登录可能触发额外验证、强制退出、会话失效、功能限制、临时冻结或永久封号。无法预测风险是否发生以及影响范围。
 
 ## 使用前须知
@@ -17,6 +16,19 @@
 
 本项目提供 ChatGPT 官方网页的代理访问能力，不是 OpenAI API，也不是自建聊天前端。用户通过访问验证后，浏览器会进入经过服务端转发的官网页面。
 
+## 项目演示
+
+<div align="center">
+  <video
+    src="https://raw.githubusercontent.com/Jasa-Chi-Ray/ChatGPT-Super-Mirror/main/video/GitHub01.mp4"
+    width="800"
+    controls
+    loop
+    muted>
+    您的浏览器不支持视频播放。
+  </video>
+  <p><em>项目演示</em></p>
+</div>
 
 
 ## 登录方式
@@ -30,11 +42,13 @@
 
 不要选择 Google、Apple、Microsoft、企业 SSO 或其他第三方身份提供商。这些登录方式不受支持，可能停留在跳转页面、登录失败或导致当前登录状态失效。
 
-同一轮登录只请求一次验证码。不要重复发送、返回上一步、跨设备提交或同时打开多个登录页面。否则会触发失败。如果验证码已过期或登录流程失败，请停止本轮操作，稍后打开新的登录页面重新开始。
+同一轮登录只请求一次验证码。不要重复发送、返回上一步、跨设备提交或同时打开多个登录页面。否则会触发失败。
+
+如果验证码已过期或登录流程失败，请停止本轮操作，稍后打开新的登录页面重新开始。
 
 ## 性能限制
 
-如果要部署服务器性能较弱，登录和页面访问还涉及会话 Cookie 的加密、解密、同步以及多个上游请求，因此下列操作可能明显卡顿：
+如果部署服务器性能较弱，登录和页面访问还涉及会话 Cookie 的加密、解密、同步以及多个上游请求，因此下列操作可能明显卡顿：
 
 - 提交邮箱和验证码；
 - 登录后的第一次页面跳转；
@@ -44,21 +58,21 @@
 
 页面变慢不一定代表请求失败。请耐心等待，不要连续刷新、重复提交验证码或快速点击登录按钮，否则可能增加服务器负载并破坏当前登录流程。
 
-
-
 ## 部署
 
 可使用本目录中的 `.env` 启动：
 
 ```bash
-git clone https://github.com/Jasa-Chi-Ray/ChatGPT--Super-Mirror.git
-cd 你的目录
+git clone https://github.com/Jasa-Chi-Ray/ChatGPT-Super-Mirror.git
+cd ChatGPT-Super-Mirror
+
 cp .env.example .env
-docker compose pull && docker compose up -d
+
+docker compose pull
+docker compose up -d
 ```
 
-
-必须配置：
+### 必须配置
 
 - 填写 `.env` 中所有必填项；
 - 为访问密码生成独立的高强度随机值；
@@ -66,6 +80,3 @@ docker compose pull && docker compose up -d
 - 使用有效 HTTPS；
 - 限制 Turnstile 允许的主机名；
 - 禁止在日志中记录 Cookie、Token、验证码、对话正文和完整登录 URL。
-
-
-
