@@ -18,17 +18,11 @@
 
 ## 项目演示
 
-<div align="center">
-  <video
-    src="https://raw.githubusercontent.com/Jasa-Chi-Ray/ChatGPT-Super-Mirror/main/video/GitHub01.mp4"
-    width="800"
-    controls
-    loop
-    muted>
-    您的浏览器不支持视频播放。
-  </video>
-  <p><em>项目演示</em></p>
-</div>
+
+
+https://github.com/user-attachments/assets/05799e60-23ed-4c63-9798-95365e4205a0
+
+
 
 
 ## 登录方式
