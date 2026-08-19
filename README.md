@@ -73,4 +73,3 @@ docker compose up -d
 - 配置真实的 Cloudflare Turnstile 站点密钥；
 - 使用有效 HTTPS；
 - 限制 Turnstile 允许的主机名；
-- 禁止在日志中记录 Cookie、Token、验证码、对话正文和完整登录 URL。
